@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Personaje
   - Suelo
+  - Lava
   layers:
   - Default
   - TransparentFX
@@ -42,6 +43,9 @@ TagManager:
   m_SortingLayers:
   - name: Fondo
     uniqueID: 4217470983
+    locked: 0
+  - name: "Decoraci\xF3n"
+    uniqueID: 2721158993
     locked: 0
   - name: Castillo
     uniqueID: 1597286797
