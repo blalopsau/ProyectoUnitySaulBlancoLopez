@@ -6,7 +6,7 @@ public class Controlador : MonoBehaviour
 {
     public Animator animacion;
     public SpriteRenderer spRender;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,6 @@ public class Controlador : MonoBehaviour
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         Vector2 posicion = transform.position;
 
-        int vidas = 10;
         // dirX toma valores entre -1 y 1
 
         if (Input.GetKey("a"))
@@ -50,13 +49,15 @@ public class Controlador : MonoBehaviour
         if (Mathf.Abs(rb.velocity.y) > 0.1f)
         {
             tipoAnimacion = TipoAnimacion.Saltar;
-
         }
-        if (ComprobarSuelo.tocaLava)
+        
+        if (ComprobarLava.tocaLava)
         {
-            vidas -= 1;
+            Vector2 position = transform.position;
+            position.x = 32.361f;
+            position.y = 19.115f;
+            transform.position = position;
         }
-
 
         animacion.SetInteger("estado", (int)tipoAnimacion);
     }
