@@ -6,8 +6,8 @@ TagManager:
   tags:
   - Personaje
   - Suelo
-  - Lava
   - Vidas
+  - Trampa
   layers:
   - Default
   - TransparentFX
@@ -44,6 +44,9 @@ TagManager:
   m_SortingLayers:
   - name: Fondo
     uniqueID: 4217470983
+    locked: 0
+  - name: Lava
+    uniqueID: 2983349611
     locked: 0
   - name: "Decoraci\xF3n"
     uniqueID: 2721158993
