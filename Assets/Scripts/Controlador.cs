@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Controlador : MonoBehaviour
 {
     public Animator animacion;
     public SpriteRenderer spRender;
 
+    public GameObject[] corazones;
+    private int vidas;
+
     // Start is called before the first frame update
     void Start()
     {
+        vidas=corazones.Length;
         Debug.Log("Iniciar");
     }
 
@@ -50,13 +54,32 @@ public class Controlador : MonoBehaviour
         {
             tipoAnimacion = TipoAnimacion.Saltar;
         }
-        
+
         if (ComprobarTrampa.tocaTrampa)
         {
             Vector2 position = transform.position;
             position.x = -5.94f;
             position.y = -2.78f;
             transform.position = position;
+            vidas--;
+
+
+            if (vidas < 1)
+            {
+                Destroy(corazones[0].gameObject);
+                SceneManager.LoadScene("Final");
+            }
+            else if (vidas < 2)
+            {
+                Destroy(corazones[1].gameObject);
+                tipoAnimacion = TipoAnimacion.Morir;
+  
+            }
+            else if (vidas < 3)
+            {
+                Destroy(corazones[2].gameObject);
+                tipoAnimacion = TipoAnimacion.Morir;
+            }
         }
 
         animacion.SetInteger("estado", (int)tipoAnimacion);
@@ -66,7 +89,9 @@ public class Controlador : MonoBehaviour
     {
         Parado,
         Correr,
-        Saltar
+        Saltar,
+        Agacharse,
+        Morir
     }
 
 }
