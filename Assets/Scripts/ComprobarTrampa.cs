@@ -1,22 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class ComprobarLava : MonoBehaviour
+public class ComprobarTrampa : MonoBehaviour
 {
-    public static bool tocaLava;
+    public static bool tocaTrampa;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Lava"))
+        if (collision.CompareTag("Trampa"))
         {
-            tocaLava = true;
+            tocaTrampa = true;
         }     
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Lava"))
+        if (collision.CompareTag("Trampa"))
         {
-            tocaLava = false;
+            tocaTrampa = false;
 
         }
     }

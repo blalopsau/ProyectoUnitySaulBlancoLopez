@@ -51,11 +51,11 @@ public class Controlador : MonoBehaviour
             tipoAnimacion = TipoAnimacion.Saltar;
         }
         
-        if (ComprobarLava.tocaLava)
+        if (ComprobarTrampa.tocaTrampa)
         {
             Vector2 position = transform.position;
-            position.x = 32.361f;
-            position.y = 19.115f;
+            position.x = -5.94f;
+            position.y = -2.78f;
             transform.position = position;
         }
 
