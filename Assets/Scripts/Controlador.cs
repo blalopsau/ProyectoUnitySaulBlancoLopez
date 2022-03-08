@@ -54,7 +54,7 @@ public class Controlador : MonoBehaviour
         {
             tipoAnimacion = TipoAnimacion.Saltar;
         }
-
+        
         if (ComprobarTrampa.tocaTrampa)
         {
             Vector2 position = transform.position;
@@ -81,6 +81,7 @@ public class Controlador : MonoBehaviour
                 tipoAnimacion = TipoAnimacion.Morir;
             }
         }
+
 
         animacion.SetInteger("estado", (int)tipoAnimacion);
     }

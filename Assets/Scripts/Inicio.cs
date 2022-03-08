@@ -8,8 +8,7 @@ public class Inicio : MonoBehaviour
 {
     public void PulsarBoton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         Debug.Log("pulsado boton");
-
     }
 }
